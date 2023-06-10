@@ -1,0 +1,28 @@
+@mixin font($family, $size, $weight, $line-height, $style:normal) {
+  font-family: $family, sans-serif;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+  font-style: $style;
+}
+
+@mixin flex($justify, $align:flex-start, $direction:row) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin button($width, $height, $background-color, $color, $border-radius, $font-size:inherit) {
+  width: $width;
+  height: $height;
+  background-color: $background-color;
+  color: $color;
+  border-radius: $border-radius;
+  font-size: $font-size;
+  cursor: pointer;
+  transition: .3s;
+  &:hover {
+    box-shadow: 0px 0px 10px 5px rgba(223, 105, 81, 0.3);
+  }
+};

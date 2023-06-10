@@ -1,0 +1,64 @@
+.testimonial-section {
+
+  margin-bottom: 170px;
+
+  &__container {
+    @include flex(center, flex-start);
+  }
+
+  &__text-block {
+    flex: 0 1 45%;
+  }
+
+  &__subtitle, &__title {
+    text-align: left;
+  }
+
+  &__title {
+    width: 80%;
+  }
+
+  &__review-card {
+    flex: 1 1 50%;
+  }
+}
+
+.review-card {
+
+  position: relative;
+  max-width: 500px;
+  background: #FFFFFF;
+  box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.02), 0px 64.8148px 46.8519px rgba(0, 0, 0, 0.0151852), 0px 38.5185px 25.4815px rgba(0, 0, 0, 0.0121481), 0px 20px 13px rgba(0, 0, 0, 0.01), 0px 8.14815px 6.51852px rgba(0, 0, 0, 0.00785185), 0px 1.85185px 3.14815px rgba(0, 0, 0, 0.00481481);
+  border-radius: 10px;
+  padding-left: 34px;
+
+  &__img {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    position: absolute;
+    top: -34px;
+    left: -34px;
+  }
+
+  &__comment {
+    @include font("Poppins", 1rem, 500, 2);
+    color: $subtitle-color;
+    width: 80%;
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+
+  &__author {
+    @include font("Poppins", 1.125rem, 600, 1.5);
+    color: $subtitle-color;
+    margin-bottom: 5px;
+  }
+
+  &__author-location {
+    @include font("Poppins", 0.875rem, 500, 1.5);
+    color: $subtitle-color;
+    margin-bottom: 34px;
+  }
+
+}

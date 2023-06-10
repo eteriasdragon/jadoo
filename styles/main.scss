@@ -1,0 +1,68 @@
+@import "./_reset";
+@import "./_font-rules";
+@import "./_variables";
+@import "./_mixins";
+@import "./_extends";
+@import "_common";
+@import "./_header";
+@import "./_hero-block";
+@import "./_services";
+@import "./_sells";
+@import "./_steps";
+@import "./_testimonials";
+@import "./_clients";
+@import "./_subscribe";
+@import "./_footer.scss";
+
+.unit-container {
+  background-image: url(../../assets/images/hero-block-decore.svg);
+  background-repeat: no-repeat;
+  background-position: right top;
+  position: relative;
+  z-index: 1;
+  &__plane {
+    position: absolute;
+    &:nth-of-type(1) {
+      position: absolute;
+      top: 20%;
+      left: 55%;
+      z-index: 2;
+      &:hover {
+        animation: flyingOver 3s forwards;
+      }
+    }
+    &:nth-of-type(2) {
+      position: absolute;
+      top: 28%;
+      left: 86%;
+      z-index: 0;
+      &:hover {
+        animation: flyAway 3s forwards;
+      }
+    }
+  }
+}
+
+@keyframes flyingOver {
+  0% {
+    transform: rotate(0deg);
+  }
+  98% {
+    transform: translate(40vw, -350px) rotate(0deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0);
+  }
+}
+
+@keyframes flyAway {
+  0% {
+    transform: rotate(45deg);
+  }
+  98% {
+    transform: translate(15vw, 100px) rotate(25deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0);
+  }
+}

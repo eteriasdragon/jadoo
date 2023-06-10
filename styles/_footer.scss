@@ -1,0 +1,57 @@
+.footer {
+
+    &__container {
+    }
+
+    &__info-wrapper {
+      @include flex(space-between, flex-start);
+      gap: 80px;
+    }
+
+		&__details {
+      flex: 1 1 20%;
+		}
+
+		&__details-logo {
+      @include font("Poppins", 2.75rem, 500, 1.5);
+      color: $title-color;
+		}
+
+		&__details-desc {
+		}
+
+		&__nav {
+      flex: 0 1 50%;
+		}
+
+		&__nav-block {
+		}
+
+		&__nav-block-title {
+		}
+
+		&__nav-block-list {
+		}
+
+		&__nav-block-link {
+		}
+
+		&__social {
+      flex: 1 1 30%;
+		}
+
+		&__social-network-list {
+		}
+
+		&__social-network-list-item {
+		}
+
+		&__social-network-list-item-icon {
+		}
+
+		&__social-slogan {
+		}
+
+		&__social-app {
+		}
+}

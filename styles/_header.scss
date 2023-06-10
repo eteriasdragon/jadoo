@@ -1,0 +1,56 @@
+.header {
+  width: 100%;
+  max-width: 1400px;
+  box-sizing: border-box;
+  @include font("Google Sans", 1.06rem, 400, 21px);
+  &__menu {
+    height: 120px;
+    text-align: center;
+    @include flex(space-between, center);
+  }
+  &__logo {
+    width: 115px;
+    height: 34px;
+  }
+  &__nav {
+    flex: 1 1 65%;
+    @include flex(flex-end);
+    &-item{
+      flex: 0 1 20%;
+      transition: .3s;
+      &:hover {
+        transform: scale(1.2);
+        color: $hover-color;
+      }
+    }
+  }
+  &__login-link {
+    flex: 0 1 13%;
+    transition: .3s;
+    &--bordered {
+      @include button(100px, 40px, transparent, inherit, 5px);
+      flex: 0 1 7%;
+      text-align: center;
+      line-height: 2.5;
+      border: 1px solid #212832;
+    }
+    &:hover {
+      transform: scale(1.2);
+      color: $hover-color;
+      box-shadow: none;
+    }
+  }
+  &__lang-select {
+    margin-left: 40px;
+    border: none;
+    @include font("Google Sans", 17px, 400, 21px );
+    background-color: transparent;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+option:hover {
+  outline: none;
+}

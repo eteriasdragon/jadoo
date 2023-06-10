@@ -1,0 +1,141 @@
+.services-section {
+  margin-bottom: 150px;
+  background-image: url(../../assets/images/xmarks-background-todown.png);
+  background-repeat: no-repeat;
+  background-position: 98% 0;
+
+  &__title {
+    margin-bottom: 70px;
+  }
+
+}
+.services-list {
+
+  @include flex(space-between, flex-start);
+
+  &__item {
+    width: 20%;
+    min-height: 320px;
+    position: relative;
+    padding-bottom: 40px;
+    @include flex(start, center, column);
+    gap: 30px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 36px;
+    transition: .3s;
+    
+    &:nth-child(1) &-icon-wrapper {
+
+      &::after {
+        transform: rotate(-180deg);
+        right: 30px;
+        bottom: 25px;
+      }
+
+    }
+
+    &:nth-child(2) &-icon-wrapper{
+
+      &::after {
+        transform: matrix(1, 0, 0, -1, 0, 0);
+        top: 35px;
+        left: 50px;
+      }
+
+    }
+
+    &:nth-child(3) &-icon-wrapper{
+
+      &::after {
+        transform: matrix(-1, 0, 0, 1, 0, 0);
+        top: 35px;
+        left: 80px;
+      }
+
+    }
+
+    &:nth-child(4) &-icon-wrapper{
+
+      &::after {
+        transform: matrix(1, 0, 0, -1, 0, 0);
+        bottom: 25px;
+        left: 79px;
+      }
+
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 37%;
+      max-width: 100px;
+      height: 41%;
+      max-height: 100px;
+      background-color: rgba(223, 105, 81, 0);
+      border-radius: 30px 0px 10px;
+      bottom: -13%;
+      left: -13%;
+      transition: .3s;
+    }
+
+    &:hover {
+      box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.02), 0px 64.8148px 46.8519px rgba(0, 0, 0, 0.0151852), 0px 38.5185px 25.4815px rgba(0, 0, 0, 0.0121481), 0px 20px 13px rgba(0, 0, 0, 0.01), 0px 8.14815px 6.51852px rgba(0, 0, 0, 0.00785185), 0px 1.85185px 3.14815px rgba(0, 0, 0, 0.00481481);
+      cursor: pointer;
+      &::after {
+        background-color: rgba(223, 105, 81);
+      }
+    }
+    
+  }
+
+  &__item-icon {
+
+      &-wrapper {
+        width: 170px;
+        height: 120px;
+        position: relative;
+        z-index: 1;
+        @include flex(center, center);
+
+        &::after {
+          content: "";
+          width: 50px;
+          height: 49px;
+          background-color: #FFF1DA;
+          border-radius: 18px 5px 10px;
+          position: absolute;
+          z-index: -1;
+        }
+
+      }
+
+  }
+
+  &__item-title {
+      @include font("Open Sans", 1.25rem, 600, 1.35);
+      color: $small-title-color;
+  }
+
+  &__item-description {
+    @include font("Poppins", 1rem, 500, 1.625);
+    color: $subtitle-color;
+    width: 65%;
+  }
+
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 37%;
+      max-width: 100px;
+      height: 41%;
+      max-height: 100px;
+      background-color: rgba(223, 105, 81, 0);
+      border-radius: 30px 0px 10px;
+      bottom: -13%;
+      left: -13%;
+      transition: .3s;
+    }
+}
