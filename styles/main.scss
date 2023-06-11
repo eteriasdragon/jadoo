@@ -15,31 +15,57 @@
 @import "./_footer.scss";
 
 .unit-container {
-  background-image: url(../../assets/images/hero-block-decore.svg);
+  background-image: url(../../assets/images/backgrounds/hero-block-decore.svg);
   background-repeat: no-repeat;
   background-position: right top;
-  position: relative;
-  z-index: 1;
+
+  @media screen and (max-width: 767px) {
+   background-image: none;
+  }
+
   &__plane {
     position: absolute;
+
+    @media screen and (max-width: 767px) {
+      width: 100px;
+      height: 100px;
+    }
+
     &:nth-of-type(1) {
       position: absolute;
       top: 20%;
-      left: 55%;
+      left: 45%;
       z-index: 2;
+
+      @media screen and (max-width: 425px) {
+        left: 30px;
+        top: 20px;
+      }
+
       &:hover {
         animation: flyingOver 3s forwards;
       }
     }
     &:nth-of-type(2) {
       position: absolute;
-      top: 28%;
-      left: 86%;
-      z-index: 0;
+      top: 24%;
+      right: 100px;
+      z-index: 2;
       &:hover {
         animation: flyAway 3s forwards;
+
+        @media screen and (max-width: 767px) {
+          animation: none;
+        }
+
+
+      }
+
+      @media screen and (max-width: 1200px) {
+        display: none;
       }
     }
+
   }
 }
 

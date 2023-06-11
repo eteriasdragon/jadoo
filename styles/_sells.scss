@@ -1,21 +1,37 @@
 .sell-section {
-  
-  background-image: url(../../assets/images/sells-decore.png);
-  margin-bottom: 190px;
-  background-repeat: no-repeat;
-  background-position: 85% 85%;
+
+  margin-bottom: 150px;
+
+  @media screen and (max-width: 767px) {
+    background-image: url(../../assets/images/backgrounds/xmarks-background-toup.png);
+    background-position: -15% top;
+    background-repeat: no-repeat;
+  }
   
 }
 .sell-section {
 
   &__sell-list {
     @include flex(space-around, flex-start);
+    gap: 15px;
+    background-image: url(../../assets/images/backgrounds/sells-decore.png);
+    background-repeat: no-repeat;
+    width: 100%;
+    background-position: 99% 80%;
+
+    @media screen and (max-width: 767px) {
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+      background-image: none;
+    }
+
   }
 }
 .sell-list {
 
   &__item {
-    flex: 1 1 33%;
+    width: 33%;
     max-width: 310px;
     max-height: 455px;
     position: relative;
@@ -33,6 +49,11 @@
         bottom: 0;
       }
     }
+
+    @media screen and (max-width: 767px) {
+      width: 100%;
+    }
+
   }
 
   &__item-img {
@@ -53,6 +74,11 @@
     flex-wrap: wrap;
     bottom: -29%;
     transition: .3s;
+
+    @media screen and (max-width: 767px) {
+      bottom: 0;
+    }
+
   }
 
   &__item-title, &__item-price  {

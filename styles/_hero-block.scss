@@ -4,36 +4,79 @@
   @include flex(center, center);
   margin-bottom: 100px;
 
+  @media screen and (max-width: 767px) {
+    height: calc(70vh - 120px);
+  }
+  @media screen and (max-width: 425px) {
+    height: min-content;
+    background-image: url(../../assets/images/backgrounds/xmarks-background-todown.png);
+    background-repeat: no-repeat;
+    background-position: right bottom;
+  }
+
   &__text-content {
     @include flex(center, space-between, column);
     gap: 30px;
+    @media screen and (max-width: 1200px) {
+      max-width: 300px;
+    }
+    @media screen and (max-width: 767px) {
+      max-width: 180px;
+    }
   }
 
   &__slogan {
     @include font("Poppins", 1.25rem , 700, 1.6);
     color: #DF6951;
     text-transform: uppercase;
+    @media screen and (max-width: 425px) {
+      display: none;
+    }
   }
 
   &__heading {
     @include font("Volkhov", 5.25rem , 700, 1);
     color: $title-color;
+    @media screen and (max-width: 1200px) {
+      font-size: 4.25rem;
+    }
+
+    @media screen and (max-width: 767px) {
+      font-size: 3.25rem;
+    }
+
+    @media screen and (max-width: 425px) {
+      margin-top: 40px;
+      text-align: center;
+      width: 100%;
+    }
+  
   }
 
   &__subheading {
     @include font("Poppins", 1rem , 500, 1.8);
     color: $subtitle-color;
     width: 75%;
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
   }
 
   &__btn {
     @include font("Google Sans", 1.25rem , 500, 1.3);
     @include button(170px, 60px, #F1A501, #fff, 10px, 1.12rem);
+    min-width: 130px;
+    min-height: 60px;
   }
 
   &__btns-wrapper {
     @include flex(space-between, flex-start);
-    max-width: 380px;
+    max-width: 400px;
+    gap: 40px;
+    @media screen and (max-width: 425px) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__play-wrapper {
@@ -43,6 +86,8 @@
 
   &__play-btn {
     @include button(52px, 52px, #DF6951, #fff, 50%);
+    min-width: 52px;
+    min-height: 52px;
     box-shadow: 0px 15px 30px rgba(223, 105, 81, 0.3);
     position: relative;
     &::before {
@@ -65,10 +110,22 @@
   &__play-text {
     @include font("Poppins", 1.06rem , 500, 1.5);
     color: #686D77;
+    width: 70%;
   }
 
   &__img {
     position: relative;
     z-index: 1;
+    @media screen and (max-width: 1200px) {
+      width: 60%;
+    }
+
+    @media screen and (max-width: 767px) {
+      width: 50%;
+      margin-left: 20px;
+    }
+    @media screen and (max-width: 425px) {
+      display: none;
+    }
   }
 }

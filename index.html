@@ -36,10 +36,25 @@
             <a href="#" class="header__login-link header__login-link--bordered">
               Sign up
             </a>
-            <select class="header__lang-select" name="lang" id="lang">
-              <option value="en" selected>EN</option>
-              <option value="ua">UA</option>
-            </select>
+            <div class="header__lang-select">
+              <span class="header__lang-select-label">EN</span>
+              <ul class="header__lang-select-list">
+                <li class="header__lang-select-list-item">EN</li>
+                <li class="header__lang-select-list-item">UA</li>
+              </ul>
+            </div>
+              <label class="header__burger-menu burger-menu">
+                <input class="burger-menu__wrapper" type="checkbox">
+                <span class="burger-menu__linebar"></span>
+                <span class="burger-menu__linebar"></span>
+                <span class="burger-menu__linebar"></span>
+              </label>
+          </div>
+          <div class="burger-menu__list">
+            <a href="#" class="burger-menu__list-link">Destination</a>
+            <a href="#" class="burger-menu__list-link">Hotels</a>
+            <a href="#" class="burger-menu__list-link">Flights</a>
+            <a href="#" class="burger-menu__list-link">Booking</a>
           </div>
         </div>
         <div class="hero-block">
@@ -79,6 +94,7 @@
       <div class="container services__container">
         <p class="services-section__subtitle subtitle">CATEGORY</p>
         <h3 class="services-section__title title">We Offer Best Services</h3>
+        <a href="#" class="services-section__show-more">More</a>
         <div class="services-section__services-list services-list">
           <div class="services-list__item">
             <div class="services-list__item-icon-wrapper">
@@ -135,7 +151,7 @@
         <div class="sell-section__sell-list sell-list">
           <div class="sell-list__item">
             <img
-              src="./assets/images/rome.png"
+              src="./assets/images/trips/rome.png"
               alt="colliseum"
               class="sell-list__item-img"
             />
@@ -147,7 +163,7 @@
           </div>
           <div class="sell-list__item">
             <img
-              src="./assets/images/london.png"
+              src="./assets/images/trips/london.png"
               alt="colliseum"
               class="sell-list__item-img"
             />
@@ -159,7 +175,7 @@
           </div>
           <div class="sell-list__item">
             <img
-              src="./assets/images/finland.png"
+              src="./assets/images/trips/finland.png"
               alt="colliseum"
               class="sell-list__item-img"
             />
@@ -226,7 +242,7 @@
           <div class="trip-item__wrapper">
             <div class="trip-item__img-wrapper">
               <img
-                src="./assets/images/greece.png"
+                src="./assets/images/trips/greece.png"
                 alt="qreece"
                 class="trip-item__img"
               />
@@ -256,10 +272,13 @@
               </div>
             </div>
             <p class="trip-item__activity">24 people going</p>
+            <svg class="trip-item__favor-icon">
+              <use xlink:href="./assets/images/sprite.svg#icon-heart"></use>
+            </svg>
           </div>
           <div class="trip-item__card trip-card">
             <img
-              src="./assets/images/stambul.png"
+              src="./assets/images/trips/stambul.png"
               alt="stambul"
               class="trip-card__img"
             />
@@ -296,21 +315,24 @@
     </section>
     <section class="clients-section">
       <div class="clients-section__container container">
+        <p class="clients-section__subtitle subtitle">
+          Top Selling
+        </p>
         <div class="clients-section__clients-list clients-list">
           <a href="#" class="clients-list__item">
-            <img src="./assets/images/axon.png" alt="axon-logo" />
+            <img src="./assets/images/companies-clients/axon.png" alt="axon-logo" />
           </a>
           <a href="#" class="clients-list__item">
-            <img src="./assets/images/jetstar.png" alt="jetstar-logo" />
+            <img src="./assets/images/companies-clients/jetstar.png" alt="jetstar-logo" />
           </a>
           <a href="#" class="clients-list__item">
-            <img src="./assets/images/expedia.png" alt="expedia-logo" />
+            <img src="./assets/images/companies-clients/expedia.png" alt="expedia-logo" />
           </a>
           <a href="#" class="clients-list__item">
-            <img src="./assets/images/qantas.png" alt="qantas-logo" />
+            <img src="./assets/images/companies-clients/qantas.png" alt="qantas-logo" />
           </a>
           <a href="#" class="clients-list__item">
-            <img src="./assets/images/alitalia.png" alt="alitalia-logo" />
+            <img src="./assets/images/companies-clients/alitalia.png" alt="alitalia-logo" />
           </a>
         </div>
       </div>
@@ -332,6 +354,12 @@
               <use xlink:href="./assets/images/sprite.svg#icon-send"></use>
             </svg>
           </div>
+        </div>
+        <div class="subscribe-section__subsribe-btn">Subscribe</div>
+        <div class="subscribe-form__send-icon-wrapper subscribe-form__send-icon-wrapper--phone">
+          <svg class="subscribe-form__send-icon subscribe-form__send-icon--phone">
+            <use xlink:href="./assets/images/sprite.svg#icon-send"></use>
+          </svg>
         </div>
       </div>
     </section>
@@ -380,33 +408,35 @@
           </div>
           <div class="footer__social">
             <div class="footer__social-network-list">
-              <div class="footer__social-network-list-item">
+              <a href="https://uk-ua.facebook.com/" target="_blank" class="footer__social-network-list-item">
                 <svg class="footer__social-network-list-item-icon">
                   <use xlink:href="./assets/images/sprite.svg#icon-facebook"></use>
                 </svg>
-              </div>
-              <div class="footer__social-network-list-item">
+              </a>
+              <a href="https://www.instagram.com/" target="_blank"  class="footer__social-network-list-item">
                 <svg class="footer__social-network-list-item-icon">
                   <use xlink:href="./assets/images/sprite.svg#icon-instagram"></use>
                 </svg>
-              </div>
-              <div class="footer__social-network-list-item">
+              </a>
+              <a href="https://twitter.com/" target="_blank"  class="footer__social-network-list-item">
                 <svg class="footer__social-network-list-item-icon">
                   <use xlink:href="./assets/images/sprite.svg#icon-twitter"></use>
                 </svg>
-              </div>
-              <div class="footer__social-network-list-item">
+              </a>
+              <a href="https://www.youtube.com/" target="_blank" class="footer__social-network-list-item">
                 <svg class="footer__social-network-list-item-icon">
                   <use xlink:href="./assets/images/sprite.svg#icon-youtube"></use>
                 </svg>
-              </div>
+              </a>
             </div>
             <p class="footer__social-slogan">Discover our app</p>
-            <div class="footer__social-app">
-              <img src="./assets/images/google-play.png" alt="google play" />
-            </div>
-            <div class="footer__social-app">
-              <img src="./assets/images/app-store.png" alt="app store" />
+            <div class="footer__social-app-wrapper">
+              <a href="https://play.google.com/store/games?hl=ru&gl=US&pli=1" class="footer__social-app" target="_blank">
+                <img src="./assets/images/google-play.png" alt="google play" />
+              </a>
+              <a href="https://www.apple.com/ua/app-store/" class="footer__social-app" target="_blank">
+                <img src="./assets/images/app-store.png" alt="app store" />
+              </a>
             </div>
           </div>
         </div>

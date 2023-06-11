@@ -4,6 +4,11 @@
 
   &__container {
     @include flex(center, flex-start);
+
+    @media screen and (max-width: 767px) {
+      @include flex(flex-start, center, column);
+    }
+
   }
 
   &__text-block {
@@ -12,10 +17,21 @@
 
   &__subtitle, &__title {
     text-align: left;
+
+    @media screen and (max-width: 767px) {
+      text-align: center;
+    }
+
   }
 
   &__title {
     width: 80%;
+
+    @media screen and (max-width: 767px) {
+      width: 100%;
+      margin-bottom: 70px;
+    }
+
   }
 
   &__review-card {
@@ -39,6 +55,12 @@
     position: absolute;
     top: -34px;
     left: -34px;
+
+    @media screen and (max-width: 767px) {
+      left: calc(50% - 34px);
+      top: -50px;
+    }
+
   }
 
   &__comment {

@@ -2,23 +2,55 @@
 
   margin-bottom: 145px;
 
-		&__clients-list {
-      @include flex(space-around, center);
-      gap: 50px;
-		}
+  &__clients-list {
+    width: 100%;
+    @include flex(space-between, center);
+    gap: 7px;
+
+    @media screen and (max-width: 800px) {
+      flex-wrap: wrap;
+    }
+
+    @media screen and (max-width: 500px) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+  }
+
+  &__subtitle {
+    display: none;
+
+    @media screen and (max-width: 500px) {
+      display: block;
+    }
+
+  }
 }
 
 .clients-list {
 
 		&__item {
 
-      flex: 1 1 50%;
+      flex: 0 1 15%;
       height: 86px;
       background: #FFFFFF;
       border-radius: 10px;
       @include flex(center, center);
       transition: .3s;
       filter: grayscale(1);
+
+      @media screen and (max-width: 800px) {
+        width: 240px;
+        height: 80px;
+      }
+
+      @media screen and (max-width: 500px) {
+        width: 240px;
+        height: 80px;
+        min-height: 80px;
+        max-height: 80px;
+      }
 
       &:hover {
         box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.02), 0px 64.8148px 46.8519px rgba(0, 0, 0, 0.0151852), 0px 38.5185px 25.4815px rgba(0, 0, 0, 0.0121481), 0px 20px 13px rgba(0, 0, 0, 0.01), 0px 8.14815px 6.51852px rgba(0, 0, 0, 0.00785185), 0px 1.85185px 3.14815px rgba(0, 0, 0, 0.00481481);

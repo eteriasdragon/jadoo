@@ -1,16 +1,37 @@
 .header {
   width: 100%;
   max-width: 1400px;
-  box-sizing: border-box;
   @include font("Google Sans", 1.06rem, 400, 21px);
+
+  &:has(.burger-menu__wrapper:checked) .burger-menu__list {
+    top: 60px;
+    z-index: 3;
+    width: 100%;
+  }
+  &:has(.burger-menu__wrapper:checked) &__menu{
+    width: 100%;
+    margin-left: -10px;
+    position: relative;
+    padding: 0 10px;
+    box-sizing: content-box;
+    background-color: #FFF1DA;
+   }
+
   &__menu {
     height: 120px;
     text-align: center;
+    position: relative;
+    transition: .3s;
     @include flex(space-between, center);
+
+    @media screen and (max-width: 767px) {
+      height: 60px;
+    }
   }
   &__logo {
     width: 115px;
     height: 34px;
+
   }
   &__nav {
     flex: 1 1 65%;
@@ -23,13 +44,26 @@
         color: $hover-color;
       }
     }
+
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+
   }
   &__login-link {
     flex: 0 1 13%;
     transition: .3s;
+
+    
+    @media screen and (max-width: 767px) {
+      display: none;
+      flex: 1 1 50%;
+    }
+
+
     &--bordered {
       @include button(100px, 40px, transparent, inherit, 5px);
-      flex: 0 1 7%;
+      flex: 0 1 9%;
       text-align: center;
       line-height: 2.5;
       border: 1px solid #212832;
@@ -41,16 +75,177 @@
     }
   }
   &__lang-select {
-    margin-left: 40px;
+    flex: 0 1 5%;
+    text-align: center;
     border: none;
-    @include font("Google Sans", 17px, 400, 21px );
+    @include font("Google Sans", 1.0625rem, 400, 1.125);
+    color: #212832;
     background-color: transparent;
+    position: relative;
+    transition: .3s;
+    cursor: pointer;
     &:focus {
       outline: none;
+    }
+
+    @media screen and (max-width: 1200px) {
+      text-align: center;
+      flex: 0 1 10%;
+    }
+
+    @media screen and (max-width: 767px) {
+      text-align: right;
+      flex: 1 1 50%;
+      font-size: 1.3625rem;
+    }
+
+    &:hover {
+
+      .header__lang-select-label::after {
+        rotate: 180deg;
+      }
+  
+      .header__lang-select-list {
+        display: block;
+      }
+  
+    }
+
+  }
+
+  &__lang-select-label {
+
+    @media screen and (max-width: 767px) {
+      margin-right: 20px;
+    }
+
+    &::after {
+      position: absolute;
+      content: "\02C5";
+      display: inline-block;
+      transform: scaleX(1.5);
+      right: 5px;
+      transition: .3s;
+
+      @media screen and (max-width: 1200px) {
+        left: 50px;
+      }
+
+      @media screen and (max-width: 767px) {
+        left: inherit;
+      }
+
+    }
+  }
+
+  &__lang-select-list {
+    display: none;
+    position: absolute;
+    border-radius: 5px;
+    border: 1px solid #df6951;
+    overflow: hidden;
+    left: 15px;
+    top: 25px;
+
+    @media screen and (max-width: 767px) {
+      left: inherit;
+      width: 50px;
+      right: 0;
+    }
+  }
+
+  &__lang-select-list-item {
+    width: 50px;
+    height: 25px;
+    border-bottom: 1px dotted #df6951;
+    background-color: #e2bab242;
+    @include flex(center, center);
+
+    &:last-of-type {
+      border-bottom: none;
     }
   }
 }
 
-option:hover {
-  outline: none;
+.burger-menu {
+  display: inline-block;
+  cursor: pointer;
+  margin-top: 5px;
+  margin-left: 10px;
+  @include flex(flex-start, flex-end, column);
+  display: none;
+
+  @media screen and (max-width: 767px) {
+    display: flex;
+  }
+
+  &__linebar {
+    display: block;
+    width: 22px;
+    height: 3px;
+    background-color: #737373;
+    margin-bottom: 5px;
+    transition: transform 0.3s, opacity 0.3s;
+    text-align: right;
+  
+    &:nth-of-type(2) {
+      width: 17px;
+    }
+  
+    &:nth-of-type(3) {
+      width: 10px;
+    }
+  
+  }
+
+  &__wrapper {
+
+    &[type="checkbox"] {
+      &:checked {
+
+        & ~ .burger-menu__linebar:nth-of-type(1) {
+          transform: rotate(45deg);
+          translate: 0% 10px;
+        }
+
+        & ~ .burger-menu__linebar:nth-of-type(2) {
+          opacity: 0;
+        }
+
+        & ~ .burger-menu__linebar:nth-of-type(3) {
+          transform: rotate(-45deg);
+          translate: 0% -6px;
+          width: 22px;
+        }
+
+      }
+    }
+  }
+
+  &__list {
+    position: absolute;
+    width: 100vw;
+    margin-left: -10px;
+    background-color: #FFF1DA;
+    top: -200px;
+    text-align: center;
+    transition: .3s;
+    color: #737373;
+    @include flex(flex-start, center, column);
+    @include font("Poppins", 1.875rem, 400, 1.5);
+  }
+
+  &__list-link {
+    width: 100%;
+    height: 50px;
+    @include flex(center, center);
+
+    &:active {
+      background-color: #fcf7f0;
+    }
+  }
+}
+
+input[type="checkbox"] {
+  display: none;
 }

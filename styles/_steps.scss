@@ -1,215 +1,92 @@
 .steps-section {
   margin-bottom: 200px;
 
-		&__container {
-      @include flex(center, flex-start);
-      gap: 100px;
-		}
+  @media screen and (max-width: 767px) {
+    background-image: url("../../assets/images/backgrounds/xmarks-background-toup.png");
+    background-repeat: no-repeat;
+    background-position: right 77%;
+  }
 
-		&__info-block {
-      flex: 1 1 50%;
-      max-width: 50%;
-		}
+  &__container {
+    @include flex(space-around, flex-start);
+    gap: 100px;
 
-    &__trip-block {
-      flex: 1 1 50%;
-      max-width: 50%;
-      position: relative;
+    @media screen and (max-width: 1200px) {
+      gap: 10px;
     }
 
-		&__subtitle {
-      text-align: left;
-		}
-
-		&__title {
-      text-align: left;
-      margin-bottom: 30px;
-		}
-
-		&__step {
-      width: 60%;
-      margin-bottom: 48px;
-      &:last-of-type {
-        margin-bottom: 0;
-      }
-		}
-
-  }
-
-.trip-item {
-  box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.02), 0px 64.8148px 46.8519px rgba(0, 0, 0, 0.0151852), 0px 38.5185px 25.4815px rgba(0, 0, 0, 0.0121481), 0px 20px 13px rgba(0, 0, 0, 0.01), 0px 8.14815px 6.51852px rgba(0, 0, 0, 0.00785185), 0px 1.85185px 3.14815px rgba(0, 0, 0, 0.00481481);
-  max-width: 370px;
-  max-height: 400px;
-  position: relative;
-  z-index: 6;
-  border-radius: 26px;
-  margin-top: 50px;
-  transition: .2s;
-
-  &:hover {
-    cursor: pointer;
-    box-shadow: 0px 15px 30px 1px #bbd4e993;
-
-    .trip-item__card {
-      bottom: 0;
-      right: -45%;
+    @media screen and (max-width: 767px) {
+      @include flex(flex-start, center, column);
+      gap: 60px;
     }
+
   }
 
-  &::after {
-    content: "";
-    position: absolute;
-    width: 70%;
-    height: 70%;
-    background-color: #59B1E6;
-    filter: blur(75px);
-    z-index: 1;
-    opacity: .8;
-    top:10%;
-    left: 30%;
+  &__info-block {
+    flex: 1 1 50%;
+    max-width: 50%;
+
+    @media screen and (max-width: 1200px) {
+      max-width: 40%;
+    }
+
+    @media screen and (max-width: 767px) {
+      max-width: 80%;
+    }
+
   }
 
-  &__wrapper {
-    @include flex(flex-start, flex-start, column);
-    background-color: #fff;
+  &__trip-block {
+    flex: 1 1 50%;
+    height: 100%;
+    max-width: 45%;
     position: relative;
-    z-index: 5;
-    padding: 0 25px;
-    border-radius: 26px;
+    margin-right: 50px;
+    @include flex(center, center);
+
+    @media screen and (max-width: 1200px) {
+      max-width: 40%;
+    }
+
+    @media screen and (max-width: 767px) {
+      margin-right: 0;
+      width: 280px;
+    }
+
   }
 
-    &__img-wrapper {
-      border: 1px solid #000000;
-      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-      border-radius: 24px;
-      overflow: hidden;
+  &__subtitle {
+    text-align: left;
+  }
+
+  &__title {
+    text-align: left;
+    margin-bottom: 30px;
+
+    @media screen and (max-width: 767px) {
+      font-size: 2rem;
       width: 100%;
-      max-height: 160px;
-      margin: 20px auto 26px;
     }
 
-    &__img {
-      width: 100%;
-      height: 100%;
-    }
+  }
 
-    &__title {
-      @include font("Poppins", 1.125rem, 500, 1.2);
-      margin-bottom: 13px;
-      color: $card-title;
-    }
-
-    &__description {
-      @include font("Poppins", 1rem, 500, 1.25);
-      color: $card-subtitle;
-      position: relative;
-      margin-bottom: 20px;
-    }
-
-    &__date {
-      margin-right: 10px;
-
-      &::after {
-        content: "";
-        position: absolute;
-        width: 1px;
-        height: 16px;
-        background-color: $card-subtitle;
-        top: 2px;
-      }
-
-    }
-
-    &__details-wrapper {
-      width: 45%;
-      @include flex(space-between, center);
-      margin-bottom: 30px;
-    }
-
-    &__details-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background-color: #F5F5F5;
-      @include flex(center, center);
-      & svg {
-        width: 15px;
-        height: 15px;
-      }
-    }
-
-    &__activity {
-      position: relative;
-      @include font("Poppins", 1rem, 500, 1.25);
-      color: $card-subtitle;
-      margin-left: 30px;
-      margin-bottom: 30px;
-
-      &::before {
-        content: "";
-        width: 16px;
-        height: 16px;
-        position: absolute;
-        left: -30px;
-        background-image: url(../../assets/images/small-house.png)
-      }
-    }
-
-}
-.step {
-
-  @include flex(space-between, center);
-  gap: 20px;
-
-  &:nth-of-type(1) {
-    .step__icon-wrapper {
-      background-color: #F0BB1F;
-      & svg {
-      width: 22px;
-      height: 22px;
-      }
+  &__step {
+    width: 60%;
+    margin-bottom: 48px;
+    &:last-of-type {
+      margin-bottom: 0;
     }
   }
 
-  &:nth-of-type(2) {
-    .step__icon-wrapper {
-      background-color: #F15A2B;
-    }
-  }
-
-  &:nth-of-type(3) {
-    .step__icon-wrapper {
-      background-color: #006380;
-    }
-  }
-
-    &__icon-wrapper {
-      width: 48px;
-      min-width: 48px;
-      height: 48px;
-      @include flex(center, center);
-      border-radius: 13px;
-    }
-
-		&__title {
-      @include font ("Poppins", 1rem, 700, 1.25);
-      color: $subtitle-color;
-      margin-bottom: 4px;
-		}
-
-		&__description {
-      @include font ("Poppins", 1rem, 400, 1.25);
-      color: $subtitle-color;
-		}
 }
 
 .trip-card {
 
-  width: 72%;
+  width: 60%;
   height: 27%;
   position: absolute;
   bottom: 50px;
-  right: -30%;
+  right: -17%;
   z-index: 6;
   box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.02), 0px 64.8148px 46.8519px rgba(0, 0, 0, 0.0151852), 0px 38.5185px 25.4815px rgba(0, 0, 0, 0.0121481), 0px 20px 13px rgba(0, 0, 0, 0.01), 0px 8.14815px 6.51852px rgba(0, 0, 0, 0.00785185), 0px 1.85185px 3.14815px rgba(0, 0, 0, 0.00481481);
   border-radius: 18px;
@@ -261,4 +138,196 @@
     height: 100%;
     border-radius: 30px;
   }
+}
+
+.trip-item {
+  box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.02), 0px 64.8148px 46.8519px rgba(0, 0, 0, 0.0151852), 0px 38.5185px 25.4815px rgba(0, 0, 0, 0.0121481), 0px 20px 13px rgba(0, 0, 0, 0.01), 0px 8.14815px 6.51852px rgba(0, 0, 0, 0.00785185), 0px 1.85185px 3.14815px rgba(0, 0, 0, 0.00481481);
+  max-width: 370px;
+  max-height: 400px;
+  position: relative;
+  z-index: 6;
+  border-radius: 26px;
+  margin-top: 50px;
+  transition: .2s;
+
+  @media screen and (max-width: 1200px) {
+    max-width: 320px;
+  }
+
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0px 15px 30px 1px #bbd4e993;
+
+    .trip-item__card {
+     opacity: 0;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    background-color: #59B1E6;
+    filter: blur(75px);
+    z-index: 1;
+    opacity: .8;
+    top:10%;
+    left: 30%;
+  }
+
+  &__wrapper {
+    @include flex(flex-start, flex-start, column);
+    background-color: #fff;
+    position: relative;
+    z-index: 5;
+    padding: 0 25px;
+    border-radius: 26px;
+  }
+
+  &__img-wrapper {
+      border: 1px solid #000000;
+      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+      border-radius: 24px;
+      overflow: hidden;
+      width: 100%;
+      max-height: 160px;
+      margin: 20px auto 26px;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__title {
+    @include font("Poppins", 1.125rem, 500, 1.2);
+    margin-bottom: 13px;
+    color: $card-title;
+  }
+
+  &__description {
+    @include font("Poppins", 1rem, 500, 1.25);
+    color: $card-subtitle;
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  &__date {
+    margin-right: 10px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 16px;
+      background-color: $card-subtitle;
+      top: 2px;
+    }
+
+  }
+
+  &__details-wrapper {
+    width: 45%;
+    @include flex(space-between, center);
+    margin-bottom: 30px;
+  }
+
+  &__details-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #F5F5F5;
+    @include flex(center, center);
+    & svg {
+      width: 15px;
+      height: 15px;
+    }
+  }
+
+  &__activity {
+    position: relative;
+    @include font("Poppins", 1rem, 500, 1.25);
+    color: $card-subtitle;
+    margin-left: 30px;
+    margin-bottom: 30px;
+
+    &::before {
+      content: "";
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      left: -30px;
+      background-image: url(../../assets/images/small-house.png)
+    }
+  }
+
+  &__card {
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  &__favor-icon {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    bottom: 30px;
+    right: 20px;
+
+  }
+
+}
+
+.step {
+
+  @include flex(space-between, center);
+  gap: 20px;
+
+  @media screen and (max-width: 767px) {
+    width: 100%;
+  }
+
+
+  &:nth-of-type(1) {
+    .step__icon-wrapper {
+      background-color: #F0BB1F;
+      & svg {
+      width: 22px;
+      height: 22px;
+      }
+    }
+  }
+
+  &:nth-of-type(2) {
+    .step__icon-wrapper {
+      background-color: #F15A2B;
+    }
+  }
+
+  &:nth-of-type(3) {
+    .step__icon-wrapper {
+      background-color: #006380;
+    }
+  }
+
+    &__icon-wrapper {
+      width: 48px;
+      min-width: 48px;
+      height: 48px;
+      @include flex(center, center);
+      border-radius: 13px;
+    }
+
+		&__title {
+      @include font ("Poppins", 1rem, 700, 1.25);
+      color: $subtitle-color;
+      margin-bottom: 4px;
+		}
+
+		&__description {
+      @include font ("Poppins", 1rem, 400, 1.25);
+      color: $subtitle-color;
+		}
 }

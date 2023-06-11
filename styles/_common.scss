@@ -1,5 +1,13 @@
 html {
   font-size: 16px;
+  @media screen and (max-width: 1200px) {
+    font-size: 14px;
+  }
+
+  @media screen and (max-width: 767px) {
+    font-size: 12px;
+  }
+
 }
 
 body {
@@ -28,4 +36,5 @@ select option {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 10px;
+  box-sizing: border-box;
 }

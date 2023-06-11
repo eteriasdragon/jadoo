@@ -1,20 +1,53 @@
 .services-section {
   margin-bottom: 150px;
-  background-image: url(../../assets/images/xmarks-background-todown.png);
+  background-image: url(../../assets/images/backgrounds/xmarks-background-todown.png);
   background-repeat: no-repeat;
   background-position: 98% 0;
 
+  @media screen and (max-width: 425px) {
+    background-image: none;
+  }
+
   &__title {
     margin-bottom: 70px;
+
+    @media screen and (max-width: 767px) {
+      margin-bottom: 30px;
+    }
+
+  }
+
+  &__show-more {
+    @include font("Poppins", 1.25rem, 400, 1);
+    color: #737373;
+    text-align: center;
+    display: none;
+    margin-bottom: 20px;
+    
+    @media screen and (max-width: 767px) {
+      display: block;
+    }
   }
 
 }
 .services-list {
 
   @include flex(space-between, flex-start);
+  max-width: 100%;
+
+  @media screen and (max-width: 1200px) {
+    gap: 10px;
+  }
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+  }
 
   &__item {
     width: 20%;
+    max-width: 272px;
     min-height: 320px;
     position: relative;
     padding-bottom: 40px;
@@ -24,6 +57,20 @@
     background-color: #fff;
     border-radius: 36px;
     transition: .3s;
+
+    @media screen and (max-width: 1200px) {
+      width: 17%;
+    }
+
+    @media screen and (max-width: 767px) {
+      width: 272px;
+      gap: 15px;
+      min-height: 300px;
+      padding-bottom: 0;
+      &:nth-child(n+3) {
+        display: none;
+      }
+    }
     
     &:nth-child(1) &-icon-wrapper {
 
@@ -31,6 +78,10 @@
         transform: rotate(-180deg);
         right: 30px;
         bottom: 25px;
+
+        @media screen and (max-width: 767px) {
+          right: 80px;
+        }
       }
 
     }
@@ -41,6 +92,11 @@
         transform: matrix(1, 0, 0, -1, 0, 0);
         top: 35px;
         left: 50px;
+
+        @media screen and (max-width: 767px) {
+          left: 100px;
+        }
+
       }
 
     }
@@ -78,6 +134,9 @@
       bottom: -13%;
       left: -13%;
       transition: .3s;
+      @media screen and (max-width: 1200px) {
+        height: 21%;
+      }
     }
 
     &:hover {
@@ -98,6 +157,9 @@
         position: relative;
         z-index: 1;
         @include flex(center, center);
+          @media screen and (max-width: 1200px) {
+            width: 100%;
+          }
 
         &::after {
           content: "";
@@ -116,6 +178,7 @@
   &__item-title {
       @include font("Open Sans", 1.25rem, 600, 1.35);
       color: $small-title-color;
+
   }
 
   &__item-description {

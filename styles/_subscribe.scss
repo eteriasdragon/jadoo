@@ -1,11 +1,29 @@
 .subscribe-section {
 
   padding-bottom: 170px;
-  background-image: url("../../assets/images/xmarks-background-toup.png");
+  background-image: url("../../assets/images/backgrounds/xmarks-background-toup.png");
   background-repeat: no-repeat;
   background-position: right 77%;
   position: relative;
+  @include flex(center, flex-start);
 
+  @media screen and (max-width: 425px) {
+    background-image: none;
+  }
+
+  &__subsribe-btn {
+    @include button(155px, 56px, inherit, #fff, 10px, inherit);
+    @include font("Open Sans", 1.06, 600, 1.35);
+    @include flex(center, center);
+    background: linear-gradient(180deg, #FF946D 0%, #FF7D68 100%);
+    font-size: 17px;
+    display: none;
+
+    @media screen and (max-width: 425px) {
+      display: flex;
+    }
+
+  }
 }
 
 .subscribe-form {
@@ -19,14 +37,23 @@
   z-index: 1;
   @include flex(flex-start, center, column);
 
+  @media screen and (max-width: 425px) {
+    display: none;
+  }
+
   &::before, &::after {
     content: "";
     position: absolute;
     opacity: .1;
-    background-image: url("../../assets/images/circles-decor.png");
+    background-image: url("../../assets/images/backgrounds/circles-decor.png");
     background-repeat: no-repeat;
     background-size: contain;
     z-index: -1;
+
+    @media screen and (max-width: 920px) {
+      content: none;
+    }
+
   }
 
   &::before {
@@ -112,7 +139,27 @@
       border-radius: 10px;
     }
 
+    &--phone {
+      width: 61px;
+      height: 56px;
+      top: inherit;
+      bottom: 170px;
+      margin-right: 25px;
+      display: none;
+
+      @media screen and (max-width: 425px) {
+        display: flex;
+      }
+
+      &:before  {
+        left: 19px;
+        bottom: 25px;
+      }
+    }
+
   }
+
+
 
   &__send-icon {
     width: 40px;
