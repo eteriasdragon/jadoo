@@ -3,6 +3,7 @@
   margin-bottom: 170px;
 
   &__container {
+
     @include flex(center, flex-start);
 
     @media screen and (max-width: 767px) {
@@ -16,6 +17,7 @@
   }
 
   &__subtitle, &__title {
+
     text-align: left;
 
     @media screen and (max-width: 767px) {
@@ -25,6 +27,7 @@
   }
 
   &__title {
+    
     width: 80%;
 
     @media screen and (max-width: 767px) {

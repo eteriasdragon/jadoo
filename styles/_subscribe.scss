@@ -1,11 +1,11 @@
 .subscribe-section {
 
+  @include flex(center, flex-start);
   padding-bottom: 170px;
   background-image: url("../../assets/images/backgrounds/xmarks-background-toup.png");
   background-repeat: no-repeat;
   background-position: right 77%;
   position: relative;
-  @include flex(center, flex-start);
 
   @media screen and (max-width: 425px) {
     background-image: none;
@@ -28,6 +28,7 @@
 
 .subscribe-form {
 
+  @include flex(flex-start, center, column);
   width: 90%;
   background-color: rgba(223, 215, 249, 0.2);
   border-radius: 129px 20px 20px 20px;
@@ -35,13 +36,13 @@
   padding: 80px 0;
   position: relative;
   z-index: 1;
-  @include flex(flex-start, center, column);
 
   @media screen and (max-width: 425px) {
     display: none;
   }
 
   &::before, &::after {
+
     content: "";
     position: absolute;
     opacity: .1;
@@ -74,24 +75,24 @@
   }
 
   &__title {
+    @include font("Poppins", 2.0625rem, 600, 1.63);
     width: 70%;
     margin-bottom: 75px;
-    @include font("Poppins", 2.0625rem, 600, 1.63);
     text-align: center;
     color: $subtitle-color;
   }
 
   &__form {
-    @include flex(center, center);
+    @include flex(space-between, center);
     width: 50%;
     height: 68px;
-    gap: 38px;
+    gap: 5px;
   }
 
   &__field {
     height: 100%;
     max-width: 420px;
-    flex: 1 1 60%;
+    flex: 0 1 60%;
     border: none;
     padding-left: 25px;
     background: #FFFFFF;
@@ -113,15 +114,16 @@
     @include font("Open Sans", 1.06, 600, 1.35);
     background: linear-gradient(180deg, #FF946D 0%, #FF7D68 100%);
     max-width: 180px;
-    flex: 1 1 20%;
+    flex: 0 1 30%;
   }
 
   &__send-icon-wrapper {
+
+    @include flex(center, center);
     width: 70px;
     height: 70px;
     background: linear-gradient(201.65deg, #747DEF 10.27%, #5E3BE1 100%);
     border-radius: 50%;
-    @include flex(center, center);
     position: absolute;
     top: -20px;
     right: -20px;
@@ -155,6 +157,7 @@
         left: 19px;
         bottom: 25px;
       }
+
     }
 
   }
@@ -165,4 +168,5 @@
     width: 40px;
     height: 40px;
   }
+  
 }

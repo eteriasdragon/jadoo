@@ -1,4 +1,5 @@
 .steps-section {
+
   margin-bottom: 200px;
 
   @media screen and (max-width: 767px) {
@@ -8,6 +9,7 @@
   }
 
   &__container {
+
     @include flex(space-around, flex-start);
     gap: 100px;
 
@@ -23,6 +25,7 @@
   }
 
   &__info-block {
+
     flex: 1 1 50%;
     max-width: 50%;
 
@@ -37,12 +40,13 @@
   }
 
   &__trip-block {
+
+    @include flex(center, center);
     flex: 1 1 50%;
     height: 100%;
     max-width: 45%;
     position: relative;
     margin-right: 50px;
-    @include flex(center, center);
 
     @media screen and (max-width: 1200px) {
       max-width: 40%;
@@ -73,15 +77,18 @@
   &__step {
     width: 60%;
     margin-bottom: 48px;
+
     &:last-of-type {
       margin-bottom: 0;
     }
+
   }
 
 }
 
 .trip-card {
 
+  @include flex(flex-start, flex-start);
   width: 60%;
   height: 27%;
   position: absolute;
@@ -93,7 +100,7 @@
   background-color: #FFFFFF;
   padding-top: 20px;
   padding-left: 17px;
-  @include flex(flex-start, flex-start);
+
   gap: 10px;
   transition: .3s;
 
@@ -156,12 +163,14 @@
 
 
   &:hover {
+
     cursor: pointer;
     box-shadow: 0px 15px 30px 1px #bbd4e993;
 
     .trip-item__card {
      opacity: 0;
     }
+
   }
 
   &::after {
@@ -187,13 +196,13 @@
   }
 
   &__img-wrapper {
-      border: 1px solid #000000;
-      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-      border-radius: 24px;
-      overflow: hidden;
-      width: 100%;
-      max-height: 160px;
-      margin: 20px auto 26px;
+    border: 1px solid #000000;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 24px;
+    overflow: hidden;
+    width: 100%;
+    max-height: 160px;
+    margin: 20px auto 26px;
   }
 
   &__img {
@@ -215,6 +224,7 @@
   }
 
   &__date {
+
     margin-right: 10px;
 
     &::after {
@@ -229,21 +239,24 @@
   }
 
   &__details-wrapper {
-    width: 45%;
     @include flex(space-between, center);
+    width: 45%;
     margin-bottom: 30px;
   }
 
   &__details-icon {
+
+    @include flex(center, center);
     width: 36px;
     height: 36px;
     border-radius: 50%;
     background-color: #F5F5F5;
-    @include flex(center, center);
+
     & svg {
       width: 15px;
       height: 15px;
     }
+
   }
 
   &__activity {
@@ -261,12 +274,15 @@
       left: -30px;
       background-image: url(../../assets/images/small-house.png)
     }
+
   }
 
   &__card {
+
     @media screen and (max-width: 767px) {
       display: none;
     }
+    
   }
 
   &__favor-icon {
@@ -275,7 +291,6 @@
     position: absolute;
     bottom: 30px;
     right: 20px;
-
   }
 
 }
@@ -291,32 +306,40 @@
 
 
   &:nth-of-type(1) {
+
     .step__icon-wrapper {
       background-color: #F0BB1F;
+
       & svg {
       width: 22px;
       height: 22px;
       }
+
     }
+
   }
 
   &:nth-of-type(2) {
+
     .step__icon-wrapper {
       background-color: #F15A2B;
     }
+
   }
 
   &:nth-of-type(3) {
+
     .step__icon-wrapper {
       background-color: #006380;
     }
+
   }
 
     &__icon-wrapper {
+      @include flex(center, center);
       width: 48px;
       min-width: 48px;
       height: 48px;
-      @include flex(center, center);
       border-radius: 13px;
     }
 

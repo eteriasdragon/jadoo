@@ -12,6 +12,7 @@
 .sell-section {
 
   &__sell-list {
+
     @include flex(space-around, flex-start);
     gap: 15px;
     background-image: url(../../assets/images/backgrounds/sells-decore.png);
@@ -39,15 +40,19 @@
     border-radius: 24px;
     transition: .3s;
     filter: drop-shadow(0px 100px 80px rgba(0, 0, 0, 0.02)) drop-shadow(0px 64.8148px 46.8519px rgba(0, 0, 0, 0.0151852)) drop-shadow(0px 38.5185px 25.4815px rgba(0, 0, 0, 0.0121481)) drop-shadow(0px 20px 13px rgba(0, 0, 0, 0.01)) drop-shadow(0px 8.14815px 6.51852px rgba(0, 0, 0, 0.00785185)) drop-shadow(0px 1.85185px 3.14815px rgba(0, 0, 0, 0.00481481));
+
     &:hover {
       cursor: pointer;
       box-shadow: 0 5px 8px 3px #d4d4d4;
+
       .sell-list__item-img {
         transform: scale(1.1);
       }
+
       .sell-list__item-description {
         bottom: 0;
       }
+
     }
 
     @media screen and (max-width: 767px) {
@@ -63,6 +68,7 @@
   }
 
   &__item-description {
+    @include flex(flex-start, center);
     position: absolute;
     background-color: #fff;
     width: 100%;
@@ -70,7 +76,6 @@
     padding-top: 20px;
     padding-bottom: 20px;
     box-sizing: border-box;
-    @include flex(flex-start, center);
     flex-wrap: wrap;
     bottom: -29%;
     transition: .3s;
@@ -96,6 +101,7 @@
   }
 
   &__item-duration {
+
     @include font("Poppins", 1rem, 500, 1.25);
     color: $subtitle-color;
     margin-left: 55px;
@@ -109,5 +115,7 @@
       background-image: url(../../assets/images/arrow.svg);
       background-repeat: no-repeat;
     }
+
   }
+  
 }

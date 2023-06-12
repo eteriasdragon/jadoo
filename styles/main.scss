@@ -3,7 +3,7 @@
 @import "./_variables";
 @import "./_mixins";
 @import "./_extends";
-@import "_common";
+@import "./_common";
 @import "./_header";
 @import "./_hero-block";
 @import "./_services";
@@ -45,25 +45,29 @@
       &:hover {
         animation: flyingOver 3s forwards;
       }
+      
     }
+
     &:nth-of-type(2) {
       position: absolute;
       top: 24%;
       right: 100px;
       z-index: 2;
+
       &:hover {
+
         animation: flyAway 3s forwards;
 
         @media screen and (max-width: 767px) {
           animation: none;
         }
 
-
       }
 
       @media screen and (max-width: 1200px) {
         display: none;
       }
+
     }
 
   }

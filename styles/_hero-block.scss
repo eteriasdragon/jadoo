@@ -1,12 +1,14 @@
 .hero-block {
+
+  @include flex(center, center);
   width: 100%;
   height: calc(100vh - 120px);
-  @include flex(center, center);
   margin-bottom: 100px;
 
   @media screen and (max-width: 767px) {
     height: calc(70vh - 120px);
   }
+
   @media screen and (max-width: 425px) {
     height: min-content;
     background-image: url(../../assets/images/backgrounds/xmarks-background-todown.png);
@@ -15,28 +17,35 @@
   }
 
   &__text-content {
+
     @include flex(center, space-between, column);
     gap: 30px;
+
     @media screen and (max-width: 1200px) {
       max-width: 300px;
     }
+
     @media screen and (max-width: 767px) {
       max-width: 180px;
     }
+
   }
 
   &__slogan {
     @include font("Poppins", 1.25rem , 700, 1.6);
     color: #DF6951;
     text-transform: uppercase;
+
     @media screen and (max-width: 425px) {
       display: none;
     }
+
   }
 
   &__heading {
     @include font("Volkhov", 5.25rem , 700, 1);
     color: $title-color;
+
     @media screen and (max-width: 1200px) {
       font-size: 4.25rem;
     }
@@ -54,12 +63,15 @@
   }
 
   &__subheading {
+
     @include font("Poppins", 1rem , 500, 1.8);
     color: $subtitle-color;
     width: 75%;
+
     @media screen and (max-width: 767px) {
       display: none;
     }
+
   }
 
   &__btn {
@@ -73,10 +85,12 @@
     @include flex(space-between, flex-start);
     max-width: 400px;
     gap: 40px;
+
     @media screen and (max-width: 425px) {
       flex-direction: column;
       align-items: center;
     }
+
   }
 
   &__play-wrapper {
@@ -90,6 +104,9 @@
     min-height: 52px;
     box-shadow: 0px 15px 30px rgba(223, 105, 81, 0.3);
     position: relative;
+    transition: .3s;
+    cursor: pointer;
+
     &::before {
       content: "";
       position: absolute;
@@ -100,11 +117,11 @@
       top: calc(50% - 5px);
       left: calc(50% - 7px);
     }
-    transition: .3s;
-    cursor: pointer;
+
     &:hover {
       box-shadow: 0px 0px 10px 5px rgba(223, 105, 81, 0.3);
     }
+
   }
 
   &__play-text {
@@ -116,6 +133,8 @@
   &__img {
     position: relative;
     z-index: 1;
+    top: 20px;
+
     @media screen and (max-width: 1200px) {
       width: 60%;
     }
@@ -124,8 +143,11 @@
       width: 50%;
       margin-left: 20px;
     }
+    
     @media screen and (max-width: 425px) {
       display: none;
     }
+
   }
+
 }

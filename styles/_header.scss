@@ -1,13 +1,15 @@
 .header {
+  
+  @include font("Google Sans", 1.06rem, 400, 21px);
   width: 100%;
   max-width: 1400px;
-  @include font("Google Sans", 1.06rem, 400, 21px);
 
   &:has(.burger-menu__wrapper:checked) .burger-menu__list {
     top: 60px;
     z-index: 3;
     width: 100%;
   }
+
   &:has(.burger-menu__wrapper:checked) &__menu{
     width: 100%;
     margin-left: -10px;
@@ -15,24 +17,27 @@
     padding: 0 10px;
     box-sizing: content-box;
     background-color: #FFF1DA;
-   }
+  }
 
   &__menu {
+
+    @include flex(space-between, center);
     height: 120px;
     text-align: center;
     position: relative;
     transition: .3s;
-    @include flex(space-between, center);
 
     @media screen and (max-width: 767px) {
       height: 60px;
     }
+
   }
+
   &__logo {
     width: 115px;
     height: 34px;
-
   }
+
   &__nav {
     flex: 1 1 65%;
     @include flex(flex-end);
@@ -50,40 +55,45 @@
     }
 
   }
+
   &__login-link {
+
     flex: 0 1 13%;
     transition: .3s;
 
-    
     @media screen and (max-width: 767px) {
       display: none;
       flex: 1 1 50%;
     }
 
-
     &--bordered {
       @include button(100px, 40px, transparent, inherit, 5px);
-      flex: 0 1 9%;
+      flex: 0 1 8%;
       text-align: center;
       line-height: 2.5;
       border: 1px solid #212832;
     }
+
     &:hover {
       transform: scale(1.2);
       color: $hover-color;
       box-shadow: none;
     }
+
   }
+
   &__lang-select {
-    flex: 0 1 5%;
+
+    @include font("Google Sans", 1.0625rem, 400, 1.125);
+    flex: 0 1 6%;
     text-align: center;
     border: none;
-    @include font("Google Sans", 1.0625rem, 400, 1.125);
     color: #212832;
     background-color: transparent;
     position: relative;
     transition: .3s;
     cursor: pointer;
+
     &:focus {
       outline: none;
     }
@@ -139,40 +149,50 @@
   }
 
   &__lang-select-list {
+
     display: none;
     position: absolute;
     border-radius: 5px;
     border: 1px solid #df6951;
     overflow: hidden;
-    left: 15px;
-    top: 25px;
+    left: 25px;
+    z-index: 4;
 
     @media screen and (max-width: 767px) {
       left: inherit;
       width: 50px;
       right: 0;
     }
+
   }
 
   &__lang-select-list-item {
+
+    @include flex(center, center);
     width: 50px;
     height: 25px;
     border-bottom: 1px dotted #df6951;
     background-color: #e2bab242;
-    @include flex(center, center);
 
     &:last-of-type {
       border-bottom: none;
     }
+
+    &:hover {
+      background-color: #fdab9bb0;
+    }
+
   }
+
 }
 
 .burger-menu {
+
+  @include flex(flex-start, flex-end, column);
   display: inline-block;
   cursor: pointer;
   margin-top: 5px;
   margin-left: 10px;
-  @include flex(flex-start, flex-end, column);
   display: none;
 
   @media screen and (max-width: 767px) {
@@ -180,6 +200,7 @@
   }
 
   &__linebar {
+
     display: block;
     width: 22px;
     height: 3px;
@@ -201,6 +222,7 @@
   &__wrapper {
 
     &[type="checkbox"] {
+
       &:checked {
 
         & ~ .burger-menu__linebar:nth-of-type(1) {
@@ -223,6 +245,8 @@
   }
 
   &__list {
+    @include flex(flex-start, center, column);
+    @include font("Poppins", 1.875rem, 400, 1.5);
     position: absolute;
     width: 100vw;
     margin-left: -10px;
@@ -231,19 +255,19 @@
     text-align: center;
     transition: .3s;
     color: #737373;
-    @include flex(flex-start, center, column);
-    @include font("Poppins", 1.875rem, 400, 1.5);
   }
 
   &__list-link {
+    @include flex(center, center);
     width: 100%;
     height: 50px;
-    @include flex(center, center);
 
     &:active {
       background-color: #fcf7f0;
     }
+
   }
+  
 }
 
 input[type="checkbox"] {
