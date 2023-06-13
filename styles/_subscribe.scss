@@ -13,7 +13,7 @@
 
   &__subsribe-btn {
     @include button(155px, 56px, inherit, #fff, 10px, inherit);
-    @include font("Open Sans", 1.06, 600, 1.35);
+    @include font("Open Sans", 1.06rem, 600, 1.35);
     @include flex(center, center);
     background: linear-gradient(180deg, #FF946D 0%, #FF7D68 100%);
     font-size: 17px;
@@ -71,7 +71,7 @@
     right: -45px;
     top: 40px;
     background-position: right top;
-    rotate: 267deg;
+    transform: rotate(267deg);
   }
 
   &__title {
@@ -104,14 +104,14 @@
     }
 
     &::placeholder {
-      @include font("Montserrat", 0.875, 400, 1.21);
+      @include font("Montserrat", 0.875rem, 400, 1.21);
     }
 
   }
 
   &__submit-btn {
     @include button(180px, 100%, inherit, #fff, 10px, inherit);
-    @include font("Open Sans", 1.06, 600, 1.35);
+    @include font("Open Sans", 1.06rem, 600, 1.35);
     background: linear-gradient(180deg, #FF946D 0%, #FF7D68 100%);
     max-width: 180px;
     flex: 0 1 30%;
